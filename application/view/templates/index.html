@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0,width=device-width,maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="copyright" content="Feito por Matheus Telles, todos os direitos reservados!">
+    <meta name="description" content="Sikatrizes, feridas curam, sicatrizes são eternas.">
+    <!--PAGE TITLE-->
+    <title>Matheus Telles - Inicio</title>
+    <!--GOOGLE FONT CSS-->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600' type='text/css' media='all' />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Six+Caps' type='text/css' media='all' />
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'assets/images/favicon.ico')}}" />
+    <!--LOCAL CSS-->
+    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/zoom_box/zoom_box.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/css/style.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/css/respond.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/font-awesome-4.3.0/css/font-awesome.min.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/css/background.css')}}" type='text/css' media='all' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <!--SITE URL SETTING FOR AJAX REQUESTS-->
+    <script>
+        var siteUrl = 'http://mwtelles.com';
+    </script>
+</head>
+
+<body class="home page page-template-page-reviews ajax-on">
+    <div id="contentContainer">
+        <!--LOGO-->
+        <a id="logo" href="index.html"><img src="{{url_for('static', filename = 'assets/images/sikatrizes.png')}}" alt="Sikatrizes por Matheus Telles" /></a>
+        <!--end logo-->
+        <!--MENU CONTROL-->
+        <div id="menu-control"><span></span></div>
+        <!--end MENU CONTROL-->
+        <!--AJAX CONTAINER-->
+        <div id="ajax-content">
+            <!--PAGE INFO / UPDATING BODY CLASS AND DOC TITLE-->
+            <div id="page-info" data-page-title="" class="home page page-template-page-reviews ajax-on"></div>
+            <!--PLAY BUTTON--><a class="videoLink" id="130" href="#"><i class="fa fa-play"></i></a>
+            <!--VIDEO CONTAINER-->
+            <div class="videoContainer self-video" id="video130" data-vidid="{{url_for('static', filename = 'assets/videos/astroworld.mp4')}}">
+                <div class="closeVideo">&times;</div>
+            </div>
+
+        </div>
+        <!--END AJAX CONTAINER-->
+        <!--SEARCH BAR-->
+        <form role="search" method="get" id="full-search" action=""><input type="text" value="Pesquisar..." onfocus="this.value='';" name="s" id="big-input" /></form>
+        <!--MUSIC PLAYER-->
+        <div id="audioControl" class="paused"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><audio id="audioPlayer">  <source src="{{url_for('static', filename = 'assets/music/konoha.mp3')}}" type="audio/mpeg"></audio>
+        <!--SOCIAL ICONS-->
+        <div id="socialIcons">
+            <a id="link-github" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment"></i></a>
+            <a id="link-thumb-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up"></i></a>
+            <a id="link-thumb-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down"></i></a>
+            <a id="link-search" rel="search" data-title="Search" href="#"><i class="fa fa-search"></i></a>
+        </div>
+        <!--IMAGE SLIDESHOW-->
+        <div id="headerImages"></div>
+        <!--LOADING ANIMATION-->
+        <div id="loading-page"></div>
+        <!--CONTENT COVER-->
+        <div id="contentCover"></div>
+    </div>
+    <!--end contentContainer-->
+    <!-- Footer Start -->
+    <div id="footerContainer">
+        <div id="footer">
+            <div class="container" style="padding: 100px; margin-bottom: 250px;">
+                <div class="posts-container">
+                    <div id="slide-right" class="slide-nav"><span></span></div>
+                    <div id="slide-left" class="slide-nav"><span></span></div>
+                    <h1 class="entrytitle">Videos mais vistos</h1>
+                    <div class="scroll-wrapper">
+                        <div class="scroll-this">
+                            <div class="post">
+                                <div class="image-container">
+                                    <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/culture.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/n.jpg')}}"
+                                        alt="" /></div>
+                                <div class="postInfo">
+                                    <h2 class="posttitle">CULTURE</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
+                                    <p id="views">Visualizações:</p>
+                                    <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                    <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                    <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                </div>
+                                <!--end postInfo-->
+                            </div>
+                            <!--end post-->
+                            <div class="post">
+                                <div class="image-container">
+                                    <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/amaterasu.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/i.jpg')}}"
+                                        alt="" /></div>
+                                <div class="postInfo">
+                                    <h2 class="posttitle">AMATERASU</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
+                                    <p id="views">Visualizações:</p>
+                                    <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                    <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                    <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                </div>
+                                <!--end postInfo-->
+                            </div>
+                            <!--end post-->
+                            <div class="post">
+                                <div class="image-container">
+                                    <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/k11.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/a.jpg')}}"
+                                        alt="" /></div>
+                                <div class="postInfo">
+                                    <h2 class="posttitle">K!11</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
+                                    <p id="views">Visualizações:</p>
+                                    <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                    <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                    <a id="link-comment" data-title="comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                </div>
+                                <!--end postInfo-->
+                            </div>
+                            <!--end post-->
+
+                        </div>
+                        <!--end scroll-this-->
+                    </div>
+                    <!--end scroll-wrapper-->
+                </div>
+            </div>
+            <!--CREDITS-->
+            <div id="vys-credits">
+                <!--FOOTER LOGO-->
+                <a id="footer-logo" href="https://www.mwtelles.com"><img src="{{url_for('static', filename = 'assets/images/telles.png')}}" alt="Matheus Telles" /></a>
+            </div>
+            <!--end vys-credits-->
+
+            <!--COPYRIGHT NOTICE-->
+            <div id="copyright">&copy; 2020 <a target="_blank" href="http://mwtelles.com/">&nbsp&nbspMATHEUS TELLES</a>&nbsp&nbsptodos os direitos reservados</div>
+        </div>
+        <!--end footer-->
+    </div>
+    <!--end footerContainer-->
+    <div id="sidebar">
+        <!--SIDEBAR LOGO-->
+        <a id="sidebar-logo" href="index.html"><img src="{{url_for('static', filename = 'assets/images/logosk.png')}}" alt="Sikatrizes - Um projeto da faculdade" /></a>
+        <!--MAIN MENU-->
+        <nav id="navigation" class="hasLogo">
+            <ul id="dropmenu" class="menu">
+                <li class="current-menu-item"><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+        <!--End Main Menu-->
+        <!--WIDGET-->
+        <ul id="sidebar-widgets">
+            <li class="widget">
+                <h2 class="widget-title">O PROJETO</h2>
+                <div class="textwidget">Durante o 3° Período do curso de Engenharia de Software, um grande mestre <a href="https://github.com/tassioauad">Tássio Auad</a> nos avaliou com um projeto web utilizando flask e ajax.</div><br>
+                <a target="_blank" id="link-github" data-title="GitHub" href="https://github.com/mwtelles"><i class="fab fa-github" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
+                <a target="_blank" id="link-facebook" data-title="Facebook" href="https://www.facebook.com/mwtelles"><i class="fab fa-facebook" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
+                <a target="_blank" id="link-linkedin" data-title="Linkedin" href="linkedin.com/in/mwtelles/"><i class="fab fa-linkedin" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
+                <a target="_blank" id="link-instagram" data-title="Instagram" href="https://www.instagram.com/mwtelles/"><i class="fab fa-instagram" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
+                <i class="fab fa instagram" "></i>
+            </li>
+        </ul>
+    </div>
+    <!--end sidebar-->
+    <!--JavaScript-->
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/jquery.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/zoom_box/zoom_box.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/core.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/transition.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/background.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/spin.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/custom.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/retina.js' )}} "></script>
+    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/modals.js' )}} "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9 "></script>
+</body>
+
+
+</html>

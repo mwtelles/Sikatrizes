@@ -1,0 +1,321 @@
+/*-----------900px WIDE------------*/
+
+@media screen and (max-width:900px) {
+    /*--FOOTER--*/
+    #footer {
+        margin: 0;
+        text-align: center;
+    }
+    #footerMenuContainer {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    /*--CREDITS--*/
+    #vys-credits {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
+
+/*-----------700px WIDE------------*/
+
+@media screen and (max-width:700px) {
+    body {
+        padding-bottom: 0 !important;
+    }
+    /*--VIDEO--*/
+    .post-video,
+    .videoLink {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin: -20px 0 0 -20px;
+        width: 40px;
+    }
+    /*--POST NAVIGATION--*/
+    #pageContent>a[rel="next"],
+    #pageContent>a[rel="prev"] {
+        display: inline-block;
+    }
+    #ajax-content>a[rel="next"],
+    #ajax-content>a[rel="prev"] {
+        display: none;
+    }
+    /*--CATEGORY POST--*/
+    .scroll-this {
+        /*padding-right: 0px;*/
+    }
+    .scroll-this>div {
+        margin: 0 20px 0 0;
+        width: 300px;
+    }
+    /*--FOOTER CONTAINER--*/
+    #footerContainer {
+        position: relative;
+    }
+}
+
+
+/*-----------540px WIDE------------*/
+
+@media screen and (max-width:540px) {
+    /*--PAGE CONTENT--*/
+    #pageContent.with-scrollbar,
+    #pageContent {
+        max-height: 60%;
+        width: 90%;
+        margin-left: -45%;
+    }
+    #page-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+    #page-title:after {
+        display: none;
+    }
+    #post-details span {
+        display: block;
+    }
+}
+
+
+/*-----------400px WIDE------------*/
+
+@media screen and (max-width:400px) {
+    /*--LOGO--*/
+    #logo {
+        margin: 20px 0 0 20px;
+        max-width: 50%;
+    }
+    /*--CATEGORY POST--*/
+    .entrytitle {
+        left: 20px;
+    }
+    .scroll-this>div {
+        width: 250px;
+    }
+    .scroll-this>div:first-child {
+        margin-left: 20px;
+    }
+    #slide-right {
+        right: 20px;
+    }
+    #slide-left {
+        right: 50px;
+    }
+    /*--REVIEWS--*/
+    #reviews {
+        right: 20px;
+        bottom: 60px;
+        width: 80%;
+    }
+    .reviewContent {
+        margin-bottom: 10px;
+    }
+    .reviewContent p {
+        font-size: 120%;
+    }
+    .reviewTitle {
+        margin-bottom: 20px;
+    }
+    /*--VIDEO--*/
+    body.term-post-format-video .post {
+        max-width: 80%;
+    }
+    .video-page-post {
+        right: 20px;
+        bottom: 60px;
+    }
+    /*--AUDIO--*/
+    #audioControl {
+        left: 10px;
+        bottom: 10px;
+    }
+    /*--SOCIAL ICONS--*/
+    #socialIcons {
+        right: 15px;
+        bottom: 15px;
+    }
+    /*--FOOTER MENU--*/
+    #footerMenu li {
+        margin-left: 10px;
+    }
+}
+
+
+/*--MAX HEIGHT--*/
+
+
+/*-----------750px TALL------------*/
+
+@media screen and ( max-height: 750px) {
+    /*--LOGO--*/
+    #logo {
+        max-width: 35%;
+    }
+    /*--CATEGORY POST--*/
+    .scroll-this>div {
+        width: 350px;
+        max-height: 285px;
+    }
+    .format-aside .posttitle::first-line,
+    .posts-container .posttitle {
+        font-size: 14px;
+    }
+    .format-aside .posttitle,
+    .posts-container .post-date {
+        font-size: 10px;
+    }
+    .posts-container .postInfo>* {
+        line-height: 1.4em;
+    }
+}
+
+
+/*-----------600px TALL------------*/
+
+@media screen and ( max-height: 600px) {
+    /*--CATEGORY POST--*/
+    .scroll-wrapper {
+        padding-bottom: 25px;
+    }
+    .scroll-this>div {
+        width: 185px;
+        max-height: 170px;
+    }
+    .entrytitle {
+        display: none;
+    }
+    .format-aside .posttitle,
+    .posts-container .post-date {
+        font-size: 10px !important;
+    }
+    .format-aside .posttitle::first-line,
+    .posts-container .posttitle {
+        font-size: 12px;
+    }
+    /*--VIDEO POST--*/
+    .video-page-post {
+        bottom: 60px;
+        right: 20px;
+    }
+    body.term-post-format-video .post,
+    body.page-template-page-videos .post {
+        padding-bottom: 0;
+    }
+    body.term-post-format-video .post:after,
+    body.page-template-page-videos .post:after {
+        display: none;
+    }
+    body.term-post-format-video .post .posttitle,
+    body.page-template-page-videos .post .posttitle {
+        font-size: 14px;
+    }
+    .video-content {
+        display: none;
+    }
+    .current-page {
+        margin-bottom: 10px;
+    }
+    .post-video,
+    .videoLink {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin: -20px 0 0 -20px;
+        width: 40px;
+    }
+    /*--GALLERY INFO--*/
+    #imgInfo {
+        bottom: 70px;
+        padding-bottom: 0;
+    }
+    #imgInfo:after {
+        display: none;
+    }
+    #imgInfo h2 {
+        font-size: 14px;
+        line-height: 1.2em;
+        margin: 0;
+        color: #fff;
+    }
+    #imgInfo p {
+        display: none;
+    }
+    #imgInfo small {
+        margin-bottom: 10px;
+    }
+    /*--PAGE CONTENT--*/
+    #pageContent.with-scrollbar,
+    #pageContent {
+        max-height: 60%;
+        width: 90%;
+    }
+    #page-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+    #page-title:after {
+        display: none;
+    }
+    /*--AUDIO--*/
+    #audioControl {
+        left: 10px;
+        bottom: 10px;
+    }
+    /*--SOCIAL ICONS--*/
+    #socialIcons {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+
+/*-----------2000 x 400------------*/
+
+@media screen and ( max-height: 400px) and ( max-width: 2000px) {
+    /*--LOGO--*/
+    #logo {
+        max-width: 100px;
+    }
+    /*--PAGE CONTENT--*/
+    #pageContent.with-scrollbar,
+    #pageContent {
+        max-height: 55%;
+    }
+    /*--REVIEWS--*/
+    #reviews {
+        width: 245px;
+    }
+    /*--NAVIGATION*/
+    #navigation {
+        padding: 40px;
+    }
+    /*--SLIDE NAVIGATION--*/
+    .slide-nav {
+        display: none !important;
+    }
+    /*--SCROLL WRAPPER--*/
+    .scroll-wrapper,
+    body.windowsOs .scroll-wrapper {
+        overflow-x: auto;
+    }
+}
+
+
+/*-----------400 x 600------------*/
+
+@media screen and ( max-height: 600px) and ( max-width: 400px) {
+    /*--CATEGORY POST--*/
+    .entrytitle {
+        display: inline-block;
+    }
+    .scroll-this>div {
+        width: 250px;
+        max-height: 280px;
+    }
+}
