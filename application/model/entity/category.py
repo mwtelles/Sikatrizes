@@ -1,5 +1,5 @@
 class Category:
-    def __init__(self, id, name, description):
+    def __init__(self, id, name, description, thumb):
         self._id = id
         self._name = name
         self._description = description
@@ -21,3 +21,9 @@ class Category:
 
     def getDescription(self):
         return self._description
+
+    def setThumb(self, thumb):
+        self._thumb = thumb
+
+    def getThumb(self):
+        return self._thumb
