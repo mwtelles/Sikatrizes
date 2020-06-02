@@ -14,16 +14,16 @@
             <div class="posts-container">
                 <div id="slide-right" class="slide-nav"><span></span></div>
                 <div id="slide-left" class="slide-nav"><span></span></div>
-                <h1 class="entrytitle">Videos</h1>
+                <h1 class="entrytitle">Categoria</h1>
                 <div class="scroll-wrapper">
                     <div class="scroll-this">
+                        {% for i in categories_id.get_video_category_id() %}
                         <div class="post">
                             <div class="image-container">
-                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/culture.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/n.jpg')}}"
-                                    alt="" /></div>
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/culture.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{i.getThumb()}}" alt="" /></div>
                             <div class="postInfo">
-                                <h2 class="posttitle">C U L T U R E</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
+                                <h2 class="posttitle">{{i.getTitle()}}</h2>
+                                <p>{{i.getDescription()}}</p>
                                 <p id="views">Visualizações:</p>
                                 <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
                                 <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
@@ -31,81 +31,7 @@
                             </div>
                             <!--end postInfo-->
                         </div>
-                        <!--end post-->
-                        <div class="post">
-                            <div class="image-container">
-                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/amaterasu.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/i.jpg')}}"
-                                    alt="" /></div>
-                            <div class="postInfo">
-                                <h2 class="posttitle">A M A T E R A S U</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
-                                <p id="views">Visualizações:</p>
-                                <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                            </div>
-                            <!--end postInfo-->
-                        </div>
-                        <!--end post-->
-                        <div class="post">
-                            <div class="image-container">
-                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/k11.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/a.jpg')}}"
-                                    alt="" /></div>
-                            <div class="postInfo">
-                                <h2 class="posttitle">K!11</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
-                                <p id="views">Visualizações:</p>
-                                <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                            </div>
-                            <!--end postInfo-->
-                        </div>
-                        <!--end post-->
-                        <div class="post">
-                            <div class="image-container">
-                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/reaper-death.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/k.jpg')}}"
-                                    alt="" /></div>
-                            <div class="postInfo">
-                                <h2 class="posttitle">REAPER DEATH SEAL</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
-                                <p id="views">Visualizações:</p>
-                                <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                            </div>
-                            <!--end postInfo-->
-                        </div>
-                        <!--end post-->
-                        <div class="post">
-                            <div class="image-container">
-                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/crowd-control.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/c.jpg')}}"
-                                    alt="" /></div>
-                            <div class="postInfo">
-                                <h2 class="posttitle">CROWD CONTROL</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
-                                <p id="views">Visualizações:</p>
-                                <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                            </div>
-                            <!--end postInfo-->
-                        </div>
-                        <!--end post-->
-                        <div class="post">
-                            <div class="image-container">
-                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/samurai.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/s.jpg')}}"
-                                    alt="" /></div>
-                            <div class="postInfo">
-                                <h2 class="posttitle">S A M U R A I</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .</p>
-                                <p id="views">Visualizações:</p>
-                                <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                            </div>
-                            <!--end postInfo-->
-                        </div>
+                        {% endfor %}
                         <!--end post-->
                     </div>
                     <!--end scroll-this-->
