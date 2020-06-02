@@ -1,0 +1,110 @@
+{% extends 'base.html' %} {% block head %}
+
+<body class="archive category category-videos category-5 ajax-on">
+    <div id="contentContainer">
+        <!--LOGO-->
+        <a id="logo" href="/"><img src="{{url_for('static', filename = 'assets/images/sikatrizes.png')}}" alt="Sikatrizes por Matheus Telles" /></a>
+        <!--end logo-->
+        <!--MENU CONTROL-->
+        <div id="menu-control"><span></span></div>
+        <!--AJAX CONTAINER-->
+        <div id="ajax-content">
+            <!--PAGE INFO FOR UPDATING BODY CLASS AND DOC TITLE-->
+            <div id="page-info" data-page-title="" class="archive category category-videos category-5 ajax-on"></div>
+            <div class="posts-container">
+                <div id="slide-right" class="slide-nav"><span></span></div>
+                <div id="slide-left" class="slide-nav"><span></span></div>
+                <h1 class="entrytitle">Videos</h1>
+                <div class="scroll-wrapper">
+                    <div class="scroll-this">
+                        <div class="post">
+                            <div class="image-container">
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/culture.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/n.jpg')}}"
+                                    alt="" /></div>
+                            <div class="postInfo">
+                                <h2 class="posttitle">C U L T U R E</h2>
+                            </div>
+                            <!--end postInfo-->
+                        </div>
+                        <!--end post-->
+                        <div class="post">
+                            <div class="image-container">
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/amaterasu.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/i.jpg')}}"
+                                    alt="" /></div>
+                            <div class="postInfo">
+                                <h2 class="posttitle">A M A T E R A S U</h2>
+                            </div>
+                            <!--end postInfo-->
+                        </div>
+                        <!--end post-->
+                        <div class="post">
+                            <div class="image-container">
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/k11.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/a.jpg')}}"
+                                    alt="" /></div>
+                            <div class="postInfo">
+                                <h2 class="posttitle">K!11</h2>
+                            </div>
+                            <!--end postInfo-->
+                        </div>
+                        <!--end post-->
+                        <div class="post">
+                            <div class="image-container">
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/reaper-death.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/k.jpg')}}"
+                                    alt="" /></div>
+                            <div class="postInfo">
+                                <h2 class="posttitle">REAPER DEATH SEAL</h2>
+                            </div>
+                            <!--end postInfo-->
+                        </div>
+                        <!--end post-->
+                        <div class="post">
+                            <div class="image-container">
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/crowd-control.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/c.jpg')}}"
+                                    alt="" /></div>
+                            <div class="postInfo">
+                                <h2 class="posttitle">CROWD CONTROL</h2>
+                            </div>
+                            <!--end postInfo-->
+                        </div>
+                        <!--end post-->
+                        <div class="post">
+                            <div class="image-container">
+                                <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="{{url_for('static', filename = 'assets/videos/samurai.mp4')}}" href="#"><i class="fa fa-play"></i></a><img src="{{url_for('static', filename = 'assets/images/thumbs/s.jpg')}}"
+                                    alt="" /></div>
+                            <div class="postInfo">
+                                <h2 class="posttitle">S A M U R A I</h2>
+                            </div>
+                            <!--end postInfo-->
+                        </div>
+                        <!--end post-->
+                    </div>
+                    <!--end scroll-this-->
+                </div>
+                <!--end scroll-wrapper-->
+            </div>
+            <!--end posts-container-->
+            <!--VIDEO HOLDER-->
+            <div class="videoContainer">
+                <div class="closeVideo">&times;</div>
+            </div>
+        </div>
+        <!--END AJAX CONTAINER-->
+        <!--FULL SEARCH BAR-->
+        <form role="search" method="get" id="full-search" action="http://mwtelles.com/"><input type="text" value="Search Site..." onfocus="this.value='';" name="s" id="big-input" /></form>
+        <!--AUDIO PLAYER-->
+        <div id="audioControl" class="paused"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><audio id="audioPlayer">  <source src="{{url_for('static', filename = 'assets/music/sharingan.mp3')}}" type="audio/mpeg"></audio>
+        <!--SOCIAL ICONS-->
+        {% include'social_icons.html'%} {% block social_icons %} {% endblock %}
+        <!--IMAGE SLIDESHOW-->
+        <div id="headerImages"></div>
+        <!--LOADING ANIMATION-->
+        <div id="loading-page"></div>
+        <!--CONTENT COVER-->
+        <div id="contentCover"></div>
+    </div>
+    <!--end contentContainer-->
+    {% include 'footer.html' %} {% block footer %} {%endblock%} {% include 'menu.html'%} {% block menu %} {% endblock%} {% include 'scripts.html' %} {% block scripts %} {% endblock %}
+</body>
+{%endblock%}
+
+</html>

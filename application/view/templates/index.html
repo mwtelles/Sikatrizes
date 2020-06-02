@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-
-<head>
-    <meta name="viewport" content="initial-scale=1.0,width=device-width,maximum-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="copyright" content="Feito por Matheus Telles, todos os direitos reservados!">
-    <meta name="description" content="Sikatrizes, feridas curam, sicatrizes são eternas.">
-    <!--PAGE TITLE-->
-    <title>Matheus Telles - Inicio</title>
-    <!--GOOGLE FONT CSS-->
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600' type='text/css' media='all' />
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Six+Caps' type='text/css' media='all' />
-    <link rel="shortcut icon" href="{{url_for('static', filename = 'assets/images/favicon.ico')}}" />
-    <!--LOCAL CSS-->
-    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/zoom_box/zoom_box.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/css/style.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/css/respond.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/font-awesome-4.3.0/css/font-awesome.min.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{url_for('static', filename = 'assets/css/background.css')}}" type='text/css' media='all' />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="sweetalert2.min.css">
-    <!--SITE URL SETTING FOR AJAX REQUESTS-->
-    <script>
-        var siteUrl = 'http://mwtelles.com';
-    </script>
-</head>
+{% extends 'base.html' %} {% block head %}
 
 <body class="home page page-template-page-reviews ajax-on">
     <div id="contentContainer">
         <!--LOGO-->
-        <a id="logo" href="index.html"><img src="{{url_for('static', filename = 'assets/images/sikatrizes.png')}}" alt="Sikatrizes por Matheus Telles" /></a>
+        <a id="logo" href="/"><img src="{{url_for('static', filename = 'assets/images/sikatrizes.png')}}" alt="Sikatrizes por Matheus Telles" /></a>
         <!--end logo-->
         <!--MENU CONTROL-->
         <div id="menu-control"><span></span></div>
@@ -53,12 +25,7 @@
         <!--MUSIC PLAYER-->
         <div id="audioControl" class="paused"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><audio id="audioPlayer">  <source src="{{url_for('static', filename = 'assets/music/konoha.mp3')}}" type="audio/mpeg"></audio>
         <!--SOCIAL ICONS-->
-        <div id="socialIcons">
-            <a id="link-github" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment"></i></a>
-            <a id="link-thumb-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up"></i></a>
-            <a id="link-thumb-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down"></i></a>
-            <a id="link-search" rel="search" data-title="Search" href="#"><i class="fa fa-search"></i></a>
-        </div>
+        {% include 'social_icons.html'%} {% block social_icons %} {% endblock %}
         <!--IMAGE SLIDESHOW-->
         <div id="headerImages"></div>
         <!--LOADING ANIMATION-->
@@ -134,11 +101,13 @@
                                 <button class="dropbtn"><i class="fas fa-caret-down"></i></i></button>
                                 <div class="dropdown-content">
                                     {% for i in category_list%}
-                                    <a href="#" style="color: #000000;">{{i.getName()}}</a> {% endfor %}
+                                    <a href="/categories/{{i.getId()}}" style="color: #000000;">{{i.getName()}}</a> {% endfor %}
                                 </div>
                             </div>
 
                             <h1 class="entrytitle">Categorias</h1>
+                            <br>
+                            <h1 style="display: inline-block; padding-left:35%; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">MAIS VISTOS</h1>
                         </div>
                     </div>
                     <div class="scroll-wrapper">
@@ -208,42 +177,8 @@
         <!--end footer-->
     </div>
     <!--end footerContainer-->
-    <div id="sidebar">
-        <!--SIDEBAR LOGO-->
-        <a id="sidebar-logo" href="index.html"><img src="{{url_for('static', filename = 'assets/images/logosk.png')}}" alt="Sikatrizes - Um projeto da faculdade" /></a>
-        <!--MAIN MENU-->
-        <nav id="navigation" class="hasLogo">
-            <ul id="dropmenu" class="menu">
-                <li class="current-menu-item"><a href="index.html">Inicio</a></li>
-            </ul>
-        </nav>
-        <!--End Main Menu-->
-        <!--WIDGET-->
-        <ul id="sidebar-widgets">
-            <li class="widget">
-                <h2 class="widget-title">O PROJETO</h2>
-                <div class="textwidget">Durante o 3° Período do curso de Engenharia de Software, um grande mestre <a href="https://github.com/tassioauad">Tássio Auad</a> nos avaliou com um projeto web utilizando flask e ajax.</div><br>
-                <a target="_blank" id="link-github" data-title="GitHub" href="https://github.com/mwtelles"><i class="fab fa-github" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
-                <a target="_blank" id="link-facebook" data-title="Facebook" href="https://www.facebook.com/mwtelles"><i class="fab fa-facebook" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
-                <a target="_blank" id="link-linkedin" data-title="Linkedin" href="linkedin.com/in/mwtelles/"><i class="fab fa-linkedin" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
-                <a target="_blank" id="link-instagram" data-title="Instagram" href="https://www.instagram.com/mwtelles/"><i class="fab fa-instagram" style="font-size: 15px;margin-top: 10px;margin-right: 10px;"></i></a>
-                <i class="fab fa instagram" "></i>
-            </li>
-        </ul>
-    </div>
-    <!--end sidebar-->
-    <!--JavaScript-->
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/jquery.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/zoom_box/zoom_box.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/core.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/transition.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/background.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/spin.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/custom.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/retina.js' )}} "></script>
-    <script type='text/javascript' src="{{url_for( 'static', filename='assets/scripts/modals.js' )}} "></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9 "></script>
+    {% include 'menu.html'%} {% block menu %} {% endblock %} {% include 'scripts.html' %} {% block scripts %} {% endblock %}
 </body>
-
+{% endblock %}
 
 </html>

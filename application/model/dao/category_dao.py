@@ -13,3 +13,11 @@ class categoryDao:
     
     def getCategories(self):
         return self._categories
+
+    def search (self, id):
+        category = None
+        for index, item in enumerate(self.getCategories()):
+            if item.getId() == id:
+                category = item
+                return category
+        return category
