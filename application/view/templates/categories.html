@@ -25,8 +25,7 @@
                                 <h2 class="posttitle">{{i.getTitle()}}</h2>
                                 <p>{{i.getDescription()}}</p>
                                 <p id="views">Visualizações:&nbsp{{i.getViews()}}</p>
-                                <a id="link-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
-                                <a id="link-deslike" data-title="Deslike" href="#"><i onclick="deslike(this)" class="fa fa-thumbs-down" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
+                                <p id="views">Curtidas:&nbsp{{i.getLikes()}}</p>
                                 <a id="link-comment" data-title="Comment" href="#"><i onclick="comment(this)" class="fa fa-comment" rel="popover" title="2000" data-content="Likes" style="display:inline-block;"></i></a>
                                 <a href="/categories/{{categories_id.getId()}}/videos/{{i.getId()}}"><button class="btn btn-sucess">ssssss</button></a>
                             </div>

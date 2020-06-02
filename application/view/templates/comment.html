@@ -20,7 +20,9 @@
             <div id="pageContent" class="entry post-page">
                 <h1 id="page-title">{{videory.getTitle()}}</h1>
                 <video class="singleVid" width="500" height="280" controls><source src="{{videory.getUrl_video()}}">Your browser does not support the video tag.</video>
-                <p>{{videory.getDescription()}}<a style="float: right;" id="link-thumb-like" data-title="Like" href="#"><i onclick="like(this)" class="fa fa-thumbs-up"></i></a></p>
+                <p>{{videory.getDescription()}}
+                    <a> <button class="btn btn-sucess" id="like"> SUAUSH</button> </a>
+                </p>
 
                 <div id="post-details">
                     <span>CURTIDAS <a href="#">Maio 2020</a></span> <span>CATEGORIA <a href="#" rel="category tag">{{category.getName()}}</a></span></div>
@@ -239,6 +241,22 @@
                     runReviews();
                 });
             });
+        </script>
+
+        <script>
+            var btnLike = $("#like")
+            btnLike.click(function() {
+                $.ajax({
+                    url: "/video/like",
+                    data: {
+                        video_id: parseInt("{{videory.getId()}}")
+
+                    },
+                    method: "POST"
+                }).done(function(data) {
+                    console.log(data)
+                })
+            })
         </script>
 
 </body>
