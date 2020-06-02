@@ -17,3 +17,4 @@ app.config['categories'] = categories
 
 from application.controller import index_controller
 from application.controller import category_controller
+from application.controller import video_controller

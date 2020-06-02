@@ -18,6 +18,6 @@ class videoDao:
     def get_video_by_id (self, video_id):
         find_video = None
         for i, video in enumerate (self.get_video_list()):
-            if video.get_id() == int(video_id):
+            if video.getId() == int(video_id):
                 find_video = video
         return find_video

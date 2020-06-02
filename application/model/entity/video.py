@@ -6,6 +6,8 @@ class Video:
         self._thumb = thumb
         self._url_video = url_video
         self._category_id = category_id
+        self._likes = 0
+        self._views = 0
 
     def setId(self, id):
         self._id = id
@@ -42,6 +44,19 @@ class Video:
 
     def getCategory_id(self):
         return self._category_id
+
+    def setLikes(self, likes):
+        self._likes = likes
+
+    def getLikes(self):
+        return self._likes
+
+    def setViews(self, views):
+        self._views = views
+
+    def getViews(self):
+        return self._views
+
 
     
 

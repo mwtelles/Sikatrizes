@@ -458,6 +458,11 @@ body.search #headerImages:after,
     opacity: .8;
 }
 
+.page-image-container-reply:after {
+    opacity: .8;
+    background-image: url("{{url_for('static', filename = 'assets/images/sky.jpg')}}");
+}
+
 .header-image {
     display: none;
     position: absolute;
@@ -469,6 +474,20 @@ body.search #headerImages:after,
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.header-image-comment {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("{{url_for('static', filename = 'assets/images/sky.jpg')}}");
 }
 
 .header-image:first-child {
@@ -2575,4 +2594,253 @@ input[type="submit"]:hover {
     content: "";
     display: table;
     clear: both;
+}
+
+
+/* -----REPLYS ----- */
+
+#commentsection {
+    margin: 60px auto 0;
+    clear: both;
+    max-width: 700px;
+    text-align: left;
+}
+
+#commentsection h3 {
+    margin-bottom: 10px;
+}
+
+.entry .commentlist {
+    width: 100%;
+    list-style: none;
+    margin: 0 0 15px;
+}
+
+.entry .commentlist .comment {
+    list-style: none;
+    padding: 15px 0;
+    clear: right;
+    position: relative;
+}
+
+.entry .commentlist .comment img.avatar {
+    width: 45px;
+    height: auto;
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+.entry .commentlist cite,
+.entry .commentlist cite a {
+    font-style: normal;
+}
+
+.entry .comment-body>* {
+    text-transform: none;
+    margin: 10px 0 10px 60px;
+}
+
+.entry .comment-body>.comment-author {
+    text-transform: none;
+    margin: 0;
+}
+
+.entry .comment-body>.comment-notes,
+.entry .comment-body>.commentmetadata {
+    display: block;
+    color: rgba(255, 255, 255, .3);
+    padding: 0;
+    font-family: 'georgia';
+    font-size: 90%;
+    font-style: italic;
+    margin: 0 0 10px;
+}
+
+.entry .commentlist .pingback p {
+    margin: 10px 5px 10px;
+}
+
+#commentform p {
+    margin: 10px 0;
+    clear: left;
+}
+
+#commentform label {
+    line-height: 35px;
+}
+
+cite.fn {
+    text-transform: uppercase;
+}
+
+.nocomments {
+    text-align: center;
+}
+
+.logged-in-as {
+    font-family: 'georgia', serif;
+    font-size: 90%;
+    font-style: italic;
+}
+
+#commentsection .parent:before {
+    background: rgba(255, 255, 255, .1);
+    bottom: 20px;
+    content: "";
+    display: block;
+    left: 20px;
+    position: absolute;
+    top: 30px;
+    width: 4px;
+    z-index: -1;
+}
+
+#commentsection .children {
+    margin-left: 50px;
+}
+
+#commentsection .children>li:after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    top: 35px;
+    left: -26px;
+    background: rgba(255, 255, 255, .1);
+    z-index: -1;
+}
+
+
+/*--UNUSED STUFF--*/
+
+#recentcomments li,
+.alt,
+.bypostauthor {}
+
+
+/*--REPLY LINK STUFF--*/
+
+.reply {
+    position: relative;
+}
+
+.reply:after {
+    position: relative;
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.comment-reply-link {
+    float: right;
+}
+
+
+/*--RESPOND STUFF--*/
+
+#respond {
+    margin: 15px 0 0;
+}
+
+.commentlist #respond {
+    margin: 0 0 30px;
+}
+
+#commentsection .required {
+    color: red;
+}
+
+#commentsection>#respond {
+    clear: both;
+}
+
+#commentsection>#respond #reply-title {
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+#commentsection>#respond .comment-form {}
+
+.commentlist #respond {
+    margin: 10px 0 20px 60px;
+}
+
+#cancel-comment-reply-link {
+    color: red;
+    font-size: 90%;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+#cancel-comment-reply-link:hover {
+    color: #fff;
+}
+
+
+/*-----------------*/
+
+
+/*---FORM STUFF---*/
+
+
+/*---------------*/
+
+input,
+textarea {
+    background: #333;
+    background: rgba(255, 255, 255, .05);
+    border: none;
+    font-size: 100%;
+    margin: 0;
+    padding: 8px 10px;
+    width: 250;
+    color: #fff;
+    color: rgba(255, 255, 255, .8);
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+input:focus,
+textarea:focus {
+    border-bottom-color: #fff;
+    background-color: #191919;
+}
+
+textarea {
+    width: 95%;
+    height: 130px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background: #333;
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    border: none;
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+input[type="submit"]:hover {
+    background: #fff;
+    color: #666;
+}
+
+
+/*--COMMENT FORM STUFF--*/
+
+#commentform input[type="text"] {
+    float: left;
+    clear: left;
+    margin: 0 8px 15px 0;
+}
+
+#commentform p.form-allowed-tags {
+    line-height: 1.3em;
+}
+
+#commentform p.form-allowed-tags code {
+    font: 12px "Courier New";
 }
