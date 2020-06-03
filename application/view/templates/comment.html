@@ -8,8 +8,6 @@
         <a id="logo" href="/"><img src="{{url_for('static', filename = 'assets/images/sikatrizes.png')}}" alt="Sikatrizes por Matheus Telles" /></a>
         <!--end logo-->
 
-        <!--MENU CONTROL-->
-        <div id="menu-control"><span></span></div>
 
         <!--AJAX CONTAINER-->
         <div id="ajax-content">
@@ -18,14 +16,17 @@
             <div id="page-info" data-page-title="Sikatrizes  " class="post-template-default single single-post postid-244 single-format-standard ajax-on"></div>
 
             <div id="pageContent" class="entry post-page">
+                <br>
                 <h1 id="page-title">{{videory.getTitle()}}</h1>
                 <video class="singleVid" width="500" height="280" controls><source src="{{videory.getUrl_video()}}">Your browser does not support the video tag.</video>
                 <p>{{videory.getDescription()}}
-                    <a> <button class="btn like" id="like"><i class="fa fa-thumbs-up"></i></button> </a>
+                    <a> <button class="btn like" id="like"><i onclick="like(this)" class="fa fa-thumbs-up"></i></button> </a>
                 </p>
 
                 <div id="post-details">
-                    <span>CURTIDAS <a href="#">Maio 2020</a></span> <span>CATEGORIA <a href="#" rel="category tag">{{category.getName()}}</a></span></div>
+                    <span style="font-size: 14px;"><i class="fa fa-thumbs-up">&nbsp</i> <a href="#">{{videory.getLikes()}}</a></span> <span style="font-size: 14px;"><i class="fa fa-eye"></i>&nbsp&nbsp<a href="#">{{videory.getViews()}}</a></span>
+                    <span style="font-size: 14px;">CATEGORIA&nbsp<a href="#" rel="category tag">{{category.getName()}}</a></span>
+                </div>
 
                 <a href="#" rel="prev">Próximo &rarr;</a>
                 <div id="commentsection">
@@ -96,7 +97,7 @@
 
         </div>
         <!--end contentContainer-->
-        {% include 'footer.html'%} {% block footer %} {% endblock%} {% include 'menu.html'%} {% block menu %} {% endblock%} {% include 'scripts.html' %} {% block scripts %} {% endblock %}
+        {% include 'footer.html'%} {% block footer %} {% endblock%} {% include 'scripts.html' %} {% block scripts %} {% endblock %}
 
         <script>
             jQuery(document).ready(function() {

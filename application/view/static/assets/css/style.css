@@ -1104,11 +1104,6 @@ body.search-open #socialIcons #link-search {
     opacity: 1;
 }
 
-#views {
-    color: #fff;
-    font-size: 12px;
-}
-
 #comment {}
 
 #link-like .fa-thumbs-up {

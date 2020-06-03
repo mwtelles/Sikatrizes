@@ -14,7 +14,7 @@
             <div class="posts-container">
                 <div id="slide-right" class="slide-nav"><span></span></div>
                 <div id="slide-left" class="slide-nav"><span></span></div>
-                <h1 class="entrytitle">Categoria</h1>
+                <h1 class="entrytitle">CATEGORIA ESCOLHIDA:</h1>
                 <div class="scroll-wrapper">
                     <div class="scroll-this">
                         {% for i in categories_id.get_video_category_id() %}
@@ -40,9 +40,8 @@
                             <div class="postInfo">
                                 <h2 class="posttitle">{{i.getTitle()}}</h2>
                                 <p>{{i.getDescription()}}</p>
-                                <p id="views">Visualizações:&nbsp{{i.getViews()}}</p>
-                                <p id="views">Curtidas:&nbsp{{i.getLikes()}}</p>
-                                <a href="/categories/{{categories_id.getId()}}/videos/{{i.getId()}}"><button class="btn btn-sucess">ssssss</button></a>
+                                <p style="font-size: 16px;"><i class="fas fa-eye"></i>&nbsp&nbsp&nbsp{{i.getViews()}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-thumbs-up"></i>&nbsp&nbsp&nbsp{{i.getLikes()}}</p>
+
                             </div>
                             <!--end postInfo-->
                         </div>
