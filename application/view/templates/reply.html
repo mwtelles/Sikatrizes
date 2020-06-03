@@ -1,14 +1,46 @@
 {% block reply %}
+<style>
+    .btn {
+        border: 2px solid black;
+        background-color: transparent;
+        color: black;
+        padding: 11px 22px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    /* Green */
+    
+    .success {
+        border-color: rgb(70, 70, 70);
+        color: rgb(172, 171, 171);
+    }
+    
+    .success:hover {
+        background-color: rgb(70, 70, 70);
+        color: white;
+    }
+    
+    .like {
+        border: none;
+        color: #fff;
+        border-radius: 60%;
+        float: right;
+    }
+    
+    .like:hover {
+        border-radius: 60%;
+        background-color: rgba(26, 218, 20, 0.644);
+        color: white;
+        font-size: 18px;
+    }
+</style>
 <div id="respond" class="comment-respond">
     <h3 id="reply-title" class="comment-reply-title">Deixe um comentário <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Cancelar</a></small></h3>
     <form action="#" method="post" id="commentform" class="comment-form">
         <p class="comment-notes"><span id="email-notes">Deixe um feedback</span> ou uma crítica construtiva! <span class="required">*</span></p>
         <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
         <p class="comment-form-author"><label for="author">Nome <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
-        <p class="comment-form-url"><label for="url">Website </label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
-        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Comentar" /> <input type='hidden' name='comment_post_ID' value='244' id='comment_post_ID' />
-            <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-        </p>
+        <p><a><button class="btn success">Comentar</button></a></p>
     </form>
 </div>
 {% endblock %}

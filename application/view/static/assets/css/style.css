@@ -458,11 +458,6 @@ body.search #headerImages:after,
     opacity: .8;
 }
 
-.page-image-container-reply:after {
-    opacity: .8;
-    background-image: url("{{url_for('static', filename = 'assets/images/sky.jpg')}}");
-}
-
 .header-image {
     display: none;
     position: absolute;
@@ -2778,57 +2773,6 @@ cite.fn {
 }
 
 
-/*-----------------*/
-
-
-/*---FORM STUFF---*/
-
-
-/*---------------*/
-
-input,
-textarea {
-    background: #333;
-    background: rgba(255, 255, 255, .05);
-    border: none;
-    font-size: 100%;
-    margin: 0;
-    padding: 8px 10px;
-    width: 250;
-    color: #fff;
-    color: rgba(255, 255, 255, .8);
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    border-bottom: 1px solid rgba(0, 0, 0, .5);
-}
-
-input:focus,
-textarea:focus {
-    border-bottom-color: #fff;
-    background-color: #191919;
-}
-
-textarea {
-    width: 95%;
-    height: 130px;
-}
-
-input[type="submit"] {
-    cursor: pointer;
-    background: #333;
-    background: rgba(255, 255, 255, .1);
-    color: #fff;
-    border: none;
-    display: inline-block;
-    padding: 8px 15px;
-    font-size: 12px;
-}
-
-input[type="submit"]:hover {
-    background: #fff;
-    color: #666;
-}
-
-
 /*--COMMENT FORM STUFF--*/
 
 #commentform input[type="text"] {
@@ -2843,4 +2787,13 @@ input[type="submit"]:hover {
 
 #commentform p.form-allowed-tags code {
     font: 12px "Courier New";
+}
+
+#btn {
+    border: 2px solid rgb(48, 47, 47);
+    background-color: transparent;
+    color: rgb(48, 47, 47);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
 }
