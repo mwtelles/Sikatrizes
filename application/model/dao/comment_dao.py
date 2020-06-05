@@ -1,3 +1,5 @@
+from flask import current_app
+
 class commentDao:
     def __init__(self):
         self._commentList = []
@@ -12,8 +14,8 @@ class commentDao:
     def find_comments_by_video_id(self, id_video):
         comments = current_app.config['comments']
         comments_video = []
-        for i, comment in enumerate(comments.get_comments()):
-            if comment.get_video_id() == id_video:
+        for i, comment in enumerate(comments.getCommentList()):
+            if comment.getVideo_Id() == id_video:
                 comments_video.append(comment)
         return comments_video
     

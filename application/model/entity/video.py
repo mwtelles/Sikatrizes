@@ -1,5 +1,5 @@
 class Video:
-    def __init__(self, id, title, description, thumb, url_video, category_id):
+    def __init__(self, id, title, description, thumb, url_video, category_id, date):
         self._id = id
         self._title = title
         self._description = description
@@ -8,6 +8,7 @@ class Video:
         self._category_id = category_id
         self._likes = 0
         self._views = 0
+        self._date = date
 
     def setId(self, id):
         self._id = id
@@ -56,6 +57,9 @@ class Video:
 
     def getViews(self):
         return self._views
+
+    def getDate(self):
+        return self._date
 
 
     

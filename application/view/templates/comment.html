@@ -18,24 +18,23 @@
             <div id="pageContent" class="entry post-page">
                 <br>
                 <h1 id="page-title">{{videory.getTitle()}}</h1>
-                <video class="singleVid" width="500" height="280" controls><source src="{{videory.getUrl_video()}}">Your browser does not support the video tag.</video>
+                <video class="singleVid" width="500" height="280" controls><source src="{{videory.getUrl_video()}}"></video>
                 <p>{{videory.getDescription()}}
                     <a> <button class="btn like" id="like"><i onclick="like(this)" class="fa fa-thumbs-up"></i></button> </a>
                 </p>
 
                 <div id="post-details">
-                    <span style="font-size: 14px;"><i class="fa fa-thumbs-up">&nbsp</i> <a href="#" id="countLikes">{{videory.getLikes()}}</a></span> <span style="font-size: 14px;"><i class="fa fa-eye"></i>&nbsp&nbsp<a href="#">{{videory.getViews()}}</a></span>
+                    <span style="font-size: 14px;"><i class="fa fa-thumbs-up">&nbsp</i> <a href="#" id="countLikes">{{videory.getLikes()}}</a></span> <span style="font-size: 14px;"><i class="fa fa-eye"></i>&nbsp&nbsp<a href="#">{{videory.getViews()}}</a></span>                    <span style="font-size: 14px;"><i class="fa fa-calendar"></i>&nbsp&nbsp<a href="#">{{videory.getDate()}}</a></span>
                     <span style="font-size: 14px;">CATEGORIA&nbsp<a href="#" rel="category tag">{{category.getName()}}</a></span>
                 </div>
                 <div id="commentsection">
 
 
                     <!--IF THERE ARE COMMENTS-->
-                    <h3 id="comments">6 Comentários</h3>
+                    <h3 id="comments">Comentários: </h3>
 
-                    {% for i in comments %}
                     <ol class="commentlist" id="commentei">
-
+                        {% for i in comments %}
                         <li class="comment byuser comment-author bypostauthor even thread-even depth-1 parent" id="comment-8">
 
                             <div id="div-comment-8" class="comment-body">
@@ -46,9 +45,8 @@
                             </div>
 
                         </li>
-
+                        {% endfor %}
                     </ol>
-                    {% endfor %}
 
 
                     <div class="navigation">
