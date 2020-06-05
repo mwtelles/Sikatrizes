@@ -1,8 +1,15 @@
 class Comment:
-    def __init__(self, text, video_id):
+    def __init__(self, id, text, video_id):
+        self._id = id
         self._text = text
         self._video_id = video_id
 
+    def setId(self, id):
+        self._id = id
+
+    def getId(self):
+        return self._id
+    
     def setText(self, text):
         self._text = text
     
