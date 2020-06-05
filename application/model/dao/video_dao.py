@@ -1,4 +1,5 @@
 from application.model.entity.video import Video
+from flask import current_app
 
 class videoDao:
     def __init__(self):
@@ -21,3 +22,16 @@ class videoDao:
             if video.getId() == int(video_id):
                 find_video = video
         return find_video
+
+    def get_videos_by_category_id (self, category_id):
+        find_videoList = []
+        for i, video in enumerate (self.get_video_list()):
+            if video.getCategory_id() == category_id:
+                find_videoList.append(video)
+        return find_videoList
+            
+
+    def get_moreLiked (self):
+        videos = current_app.config ['videos']
+        moreLikedVideo = sorted(videos.get_video_list(), key=lambda i: i.getLikes(), reverse=True)
+        return moreLikedVideo

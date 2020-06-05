@@ -14,10 +14,10 @@
             <div class="posts-container">
                 <div id="slide-right" class="slide-nav"><span></span></div>
                 <div id="slide-left" class="slide-nav"><span></span></div>
-                <h1 class="entrytitle">CATEGORIA ESCOLHIDA:</h1>
+                <h1 class="entrytitle">CATEGORIA ESCOLHIDA: {{category.getName()}}</h1>
                 <div class="scroll-wrapper">
                     <div class="scroll-this">
-                        {% for i in categories_id.get_video_category_id() %}
+                        {% for i in videos_in_category %}
                         <div class="post">
                             <div class="image-container">
                                 <!--PLAY BUTTON--><a style="display: inline-block;
@@ -35,7 +35,7 @@
     left: 50%;
     top: 50%;
     margin: -42px 0 0 -42px;
-    z-index: 98;" href="/categories/{{categories_id.getId()}}/videos/{{i.getId()}}"><button style="background-color: transparent; border: none; width: 80px; height: 80px; cursor:pointer "><i class="fa fa-play" style="font-size: 21px; color:#fff"></i></button></a><img
+    z-index: 98;" href="/categories/{{category.getId()}}/videos/{{i.getId()}}"><button style="background-color: transparent; border: none; width: 80px; height: 80px; cursor:pointer "><i class="fa fa-play" style="font-size: 21px; color:#fff"></i></button></a><img
                                     src="{{i.getThumb()}}" alt="" /></div>
                             <div class="postInfo">
                                 <h2 class="posttitle">{{i.getTitle()}}</h2>
