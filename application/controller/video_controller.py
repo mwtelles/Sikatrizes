@@ -27,6 +27,17 @@ def comment():
     except Exception as e:
         return str(e)
 
+@app.route("/video/comment/delete/")
+def delete():
+    try:
+        comments = current_app.config['comments']
+        delete = comments.delete_comment_by_id(int(request.args.get('id_comment'))) 
+        if(delete == None):
+            return jsonify(delete)
+        return jsonify(True)
+    except Exception as e:
+        return str(e)
+
 @app.route("/categories/<int:category_id>/videos/<int:video_id>")
 def video(category_id, video_id):
     videos = current_app.config ['videos']

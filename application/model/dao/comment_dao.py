@@ -19,10 +19,10 @@ class commentDao:
                 comments_video.append(comment)
         return comments_video
     
-    def delete_comment_by_id(self,id_comment):
-        comments = current_app.config['comments']
-        for i, comment in enumerate(comments.get_comments()):
-            if comment.get_id() == id_comment:
-                self._comments.pop(i)
+    def delete_comment_by_id(self, comment_id):
+        commentary = current_app.config['comments']
+        for i, comment in enumerate(commentary.getCommentList()):
+            if comment.getId() == comment_id:
+                self._commentList.pop(i)
                 return comment
         return None

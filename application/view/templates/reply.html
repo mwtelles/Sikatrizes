@@ -50,7 +50,7 @@
 </div>
 
 <script>
-    // FUNCAO DE COMENTAR O VIDEO
+    // CREATE COMMENT
     var comment_video = function() {
         var btn_comment = document.getElementById('sendComment')
         var comment = document.getElementById('comment')
@@ -61,13 +61,14 @@
                 console.log(this.response)
                 data = this.response;
                 data = JSON.parse(data)
-                $('#commentei').append(`<li class="comment byuser comment-author-themolitor bypostauthor even thread-even depth-1 parent" id="comment-8">
+                $('#commentei').append(`<li id="id_comment-` + data.id + `" class="comment byuser comment-author-themolitor bypostauthor even thread-even depth-1 parent">
 
                     <div id="div-comment-8" class="comment-body">
                         <div class="comment-author vcard">
                             <img alt='' src="{{url_for('static', filename = 'assets/images/avatar/itachi.jpg')}}" class='avatar avatar-90 photo' height='90' width='90' /> <cite class="fn">Anonimo</cite> <span class="says">:</span>
                         </div>
                         <p>` + data.text + `</p>
+                        <i class='fa fa-trash' onclick="delete_commentary( ` + data.id + ` )"></i>
                     </div>
 
                 </li>`);
@@ -75,6 +76,28 @@
             }
         }
         xhttp.open("GET", "/video/comment?id_video={{videory.getId()}}&comment=" + comment.value, true);
+        xhttp.send();
+    }
+
+    //DELETE COMMENT
+    var delete_commentary = function(comment_id) {
+        console.log('fodase')
+        var btn_comment = document.getElementById('sendComment')
+        var comment = document.getElementById('commentei')
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.response)
+                data = this.response;
+                data = JSON.parse(data)
+                if (data === true) {
+                    document.getElementById('id_comment-' + comment_id).remove();
+                }
+            }
+        }
+        xhttp.open("GET", "/video/comment/delete/?id_video={{videory.getId()}}&id_comment=" + comment_id, true);
+        console.log(comment_id)
         xhttp.send();
     }
 </script>

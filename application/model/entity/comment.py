@@ -4,9 +4,6 @@ class Comment:
         self._text = text
         self._video_id = video_id
 
-    def setId(self, id):
-        self._id = id
-
     def getId(self):
         return self._id
     
