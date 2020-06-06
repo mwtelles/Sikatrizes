@@ -21,7 +21,9 @@
         </div>
         <!--END AJAX CONTAINER-->
         <!--SEARCH BAR-->
-        <form role="search" method="get" id="full-search" action=""><input type="text" value="Pesquisar..." onfocus="this.value='';" name="s" id="big-input" /></form>
+        <form role="search" method="get" id="full-search" action="">
+            <input type="text" value="Pesquisar..." onkeyup="searchVideo(this.value)" onfocus="this.value='';" name="s" id="big-input" />
+        </form>
         <!--MUSIC PLAYER-->
         <div id="audioControl" class="paused"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><audio id="audioPlayer">  <source src="{{url_for('static', filename = 'assets/music/konoha.mp3')}}" type="audio/mpeg"></audio>
         <!--SOCIAL ICONS-->
@@ -117,7 +119,7 @@
                         </div>
                     </div>
                     <div class="scroll-wrapper">
-                        <div class="scroll-this">
+                        <div class="scroll-this" id="videos">
                             {% for i in videora [:3] %}
                             <div class="post">
                                 <div class="image-container">
@@ -154,6 +156,37 @@
     </div>
     <!--end footerContainer-->
     {% include 'menu.html'%} {% block menu %} {% endblock %} {% include 'scripts.html' %} {% block scripts %} {% endblock %}
+    <script type="application/javascript">
+        var searchVideo = function(text) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.response;
+                    data = JSON.parse(data)
+                    if (data.length > 0) {
+                        $('#videos').html('')
+                        for (let i = 0; i < data.length; i++) {
+                            const video = data[i];
+                            $('#videos').append(`<div class="post">
+                                <div class="image-container">
+                                    <!--PLAY BUTTON--><a class="post-video" data-vidtype="self-video" data-vidid="/static/` + video._thumb + `" href="#"><i class="fa fa-play"></i></a><img src="` + video._thumb + `" alt="" /></div>
+                                <div class="postInfo">
+                                    <h2 class="posttitle">` + video._title + `</h2>
+                                    <p>` + video._description + `</p>
+                                    <span style="font-size: 14px;"><i class="fa fa-thumbs-up">&nbsp</i> <a href="#" id="countLikes">` + video._likes + `</a></span>
+                                    <span style="font-size: 14px;"><i class="fa fa-eye"></i>&nbsp&nbsp<a href="#">` + video._views + `</a></span>
+                                    <span style="font-size: 14px;"><i class="fa fa-calendar"></i>&nbsp&nbsp<a href="#">` + video._date + `</a></span>
+                                </div>
+                                <!--end postInfo-->
+                            </div>`)
+                        }
+                    }
+                }
+            };
+            xhttp.open("GET", "/video/search?text=" + text + "", true);
+            xhttp.send();
+        }
+    </script>
 </body>
 {% endblock %}
 

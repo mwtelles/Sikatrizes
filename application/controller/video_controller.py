@@ -1,8 +1,19 @@
 from application import app
-from flask import render_template, request, current_app, jsonify
+import json
+from flask import render_template, request, current_app, jsonify, Response
 from application.model.dao.category_dao import categoryDao
 from application.model.dao.video_dao import videoDao
 from application.model.entity.comment import Comment
+
+@app.route("/video/search")
+def search():
+    try:
+        text_searched = request.args.get('text').lower()
+        videos = current_app.config['videos']
+        search = [x.__dict__ for x in videos.get_video_list() if  text_searched in x.getTitle().lower() ]
+        return Response(json.dumps(search),  mimetype='application/json') 
+    except Exception as e:
+        return str(e)
 
 @app.route("/video/like", methods = ["POST"])
 def like():
