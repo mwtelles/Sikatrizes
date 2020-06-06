@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% block head %}
+
+<body class="single ajax-on">
+    <div id="contentContainer">
+        <!--LOGO-->
+        <a id="logo" href="/"><img src="{{url_for('static', filename = 'assets/images/sikatrizes.png')}}" alt="Sikatrizes por Matheus Telles" /></a>
+        <!--end logo-->
+        <!--MENU CONTROL-->
+        <div id="menu-control"><span></span></div>
+        <!--AJAX CONTAINER-->
+        <div id="ajax-content">
+            <div id="pageContent" class="entry post-page">
+                <!--POST TITLE-->
+                <h1 id="page-title">Explicando o processo</h1>
+                <!--POST CONTENT-->
+                <p>Boa dia, boa tarde, boa noite Tassio kkkk, construi essa página para poder explicar melhor todo o processo de criação e a experiência que eu tive durante esse projeto para o laboratório de HiperMídia.</p>
+                <h2>Começando e construindo</h2>
+                <p> Inicialmente eu achei muito legal a proposta de constuir uma aplicação web utilizando flask, e não utilizar djando. Nunca tinha escutado falar do flask então seria um bom desafio. Pra começar eu resolvi ler a
+                    <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Documentação</a> enquanto isso fui construindo minhas páginas, aproveitando alguns recursos que eu estava estudando para Experiência do usuário e Design de Interface.
+                    Posso usar como exemplo nesse projeto o
+                    <a href="http://grafikart.github.io/Zoombox/" target="_blank">Zoombox</a> e o <a href="https://formstone.it" target="_blank">Formstone</a></p>
+                <p> Após criar a primeira página <a href="{{url_for('index')}}" target="_blank">Index</a>, foi só criar as primeiras rotas, as primeiras definições, o primeiro controller, até ai tudo normal, e foi assim até começar a entrar nas páginas dinâmicas,
+                    no que o meu projeto tem que ser. Para ser sincero essa dificuldade que veio para transformar tudo em dinâmico, fazer um parametro que busca outro e etc... me mostrou como um bom nome para classes, funções, parametros facilitam na
+                    hora de você entender o que você está fazendo kkkkk pena que só percebi depois de criar: video, videos, videory, url_video kkkk! </p>
+                <h3>O Desenvolvimento</h3>
+                <p>Depois de quebrar muita cabeça com nomes iguais, erros com jinja, esquecer de coisas básicas no desenvolvimento em flask eu percebi que o projeto estava encaminhando para o que deveria ser o resultado que eu queria que tivesse. As funcionalidades
+                    que você pediu estavam quase prontas, algumas páginas já estavam super bem encaminhadas e eu ainda tinha muito tempo para refinar, organizar css, scripts dentro da página e etc... O que nesse momento era uma preocupação até por que
+                    como eu disse estou aprendendo UI/UX e eu quero aplicar para melhorar. Contudo quando eu descobri que não poderia utilizar jquery, tive que repensar muitas das formas de realizar os requisitos do projeto.
+                </p>
+                <p>Para concluir eu gostei bastante do projeto, foi uma experiência diferente, um pouco cansativa por conta de alguns problemas que eu tive durante essas últimas semanas, mas acredito que deu para entregar um resultado satisfatório. Abaixo
+                    vou deixar uma trilha do que eu fiz nesses meus últimos commits e como eu imagino finalizar esse projeto. Abraços tássio, qualquer dúvida referente ao projeto estarei a disposição! Precisando de algo é só pedir.
+                </p>
+                <p>
+                    OBS: Eu estou optando pro programar tudo em inglês, espero que isso não seja um problema. <br> OBS²: Sikatrizes é um projeto que eu quero rever anos depois e ver minha própria evolução então me dedique bastante kkkk
+                </p>
+                <h4>Commits</h4>
+                <ol>
+                    <li>Commit inicial</li>
+                    <li>Iniciando o projeto em flask <a>(index, front-end libs, bg-video e etc..)</a></li>
+                    <li>Linkando os url, criando as entidades...</li>
+                    <li>Configurando os dao's, controllers e mais algumas coisas..</li>
+                    <li>Criando rotas, configurando os controllers e deixando dinamico..</li>
+                    <li>Criano rotas para as categorias, deixando elementos dinamicos..</li>
+                    <li>Adicionando curtidas e comentários nos vídeos das categorias..</li>
+                    <li>Testando botão de pesquisa..</li>
+                    <li>Configurando o category_controller, deixando os vídeos dinamicos..</li>
+                    <li>Adicioando a página de comentários e visualização..</li>
+                    <li>Adicionando a opção de likes dentro do projeto..</li>
+                    <li>Corrigindo alguns erros de responsividade, melhorando Ux.. </li>
+                    <li>Melhorando a UX do site, adicionando curtidas e visualização..</li>
+                    <li>Adicionando a função de comentarios</li>
+                    <li>Melhorando os comentários, implementando a opção de pegar comentarios..</li>
+                    <li>Adicionando o nome da categoria na categoria escolhida..</li>
+                    <li>Melhorando o código..</li>
+                    <li>Melhorando as descrições e mais alguns detalhes..</li>
+                    <li>Adicionando a funcionalidade extra de deletar os comentários..</li>
+                    <li>Adicionando a página Processo, melhorando alguns códigos..</li>
+                </ol>
+                <div id="post-details"><span>DATA: <a href="#"></a>05/06/2020</span></div>
+            </div>
+            <!--BACKGROUND IMAGE -->
+            <div class="page-image-container" style="background-image:url({{url_for('static', filename = 'assets/images/bridge.jpg')}})"><img src="{{url_for('static', filename = 'assets/images/bridge.jpg')}}" alt="" /></div>
+        </div>
+        <!--AUDIO PLAYER-->
+        <div id="audioControl" class="paused">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <audio id="audioPlayer">
+            <source src="{{url_for('static', filename = 'assets/music/Journey.mp3')}}" type="audio/mpeg">
+        </audio>
+        <!--IMAGE SLIDESHOW-->
+        <div id="headerImages"></div>
+        <!--LOADING ANIMATION-->
+        <div id="loading-page"></div>
+        <!--CONTENT COVER-->
+        <div id="contentCover"></div>
+    </div>
+    <!--end contentContainer-->
+    {% include 'menu.html'%} {% block menu %} {% endblock %} {% include 'footer.html'%} {% block footer %} {% endblock%} {% include 'scripts.html' %} {% block scripts %} {% endblock %}
+</body>
+{% endblock %}
+
+</html>

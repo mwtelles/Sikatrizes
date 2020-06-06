@@ -11,3 +11,6 @@ def index():
     category_list = current_app.config['categories'].getCategories()
     return render_template("index.html", category_list = category_list, videora = videora)
 
+@app.route ("/process")
+def process():
+    return render_template("process.html")
